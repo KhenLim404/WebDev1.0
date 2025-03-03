@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #575757;
+        }
+        .text {
+            padding: 10px;
+            margin: 10px;
+            color: aliceblue;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .correct { background: #90EE90; } 
+        .wrong { background: #FF6B6B; } 
+    </style>
+</head>
+<body>
+    <h1>2 Truths & 1 Lie</h1>
+    
+    <div class="statement" onclick="checkLie(this, false)">I enjoy Gaming.</div>
+    <div class="statement" onclick="checkLie(this, false)">I went to school in DonBosco.</div>
+    <div class="statement" onclick="checkLie(this, true)">I love Spicy Food.</div>
+
+    <p id="result"></p>
+
+    <script>
+        function checkLie(element, isLie) {
+            document.querySelectorAll(".statement").forEach(div => div.style.pointerEvents = "none");
+            
+            if (isLie) {
+                element.classList.add("correct");
+                document.getElementById("result").textContent = "Correct! That was the lie!";
+            } else {
+                element.classList.add("wrong");
+                document.getElementById("result").textContent = "Nope! That was a truth!";
+            }
+        }
+    </script>
+</body>
+</html>
