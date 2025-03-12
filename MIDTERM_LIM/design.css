@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #121212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#mode-btn {
+  margin-bottom: 20px;
+  padding: 12px 20px;
+  background: #38bdf8;
+  color: #0f172a;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px #0e7490;
+  transition: 0.2s ease;
+}
+
+#mode-btn:hover {
+  background: #0ea5e9;
+}
+
+.calc {
+  border: 8px solid;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+  width: 340px;
+  padding: 24px;
+  transition: 0.3s ease;
+}
+
+.screen {
+  height: 90px;
+  font-size: 24px;
+  text-align: right;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 6px solid;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+
+.screen::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2) 30%, rgba(255,255,255,0) 30%);
+  transform: skewY(-20deg);
+}
+
+.btns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.btn {
+  font-size: 1rem;
+  height: 70px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.15s;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
+}
+
+.zero {
+  grid-column: span 2;
+}
+
+.dark {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+.dark .screen {
+  background: #94a3b8;
+  color: #1e293b;
+  border-color: #334155;
+}
+
+.dark .btn {
+  background: #38bdf8;
+  color: #0f172a;
+  box-shadow: 0 6px #0e7490;
+}
+
+.dark .btn:hover {
+  background: #0ea5e9;
+}
+
+.dark .op {
+  background: #f87171;
+  box-shadow: 0 6px #b91c1c;
+}
+
+.dark .op:hover {
+  background: #ef4444;
+}
+
+.dark .eq {
+  background: #22c55e;
+  box-shadow: 0 6px #15803d;
+}
+
+.dark .eq:hover {
+  background: #16a34a;
+}
+
+.dark #clear {
+  background: #f97316;
+  box-shadow: 0 6px #c2410c;
+}
+
+.dark #clear:hover {
+  background: #ea580c;
+}
+
+.light {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.light .screen {
+  background: #e2e8f0;
+  color: #1e293b;
+  border-color: #cbd5e1;
+}
+
+.light .btn {
+  background: #94a3b8;
+  color: #1e293b;
+  box-shadow: 0 6px #64748b;
+}
+
+.light .btn:hover {
+  background: #cbd5e1;
+}
+
+.light .op {
+  background: #fbbf24;
+  box-shadow: 0 6px #b45309;
+}
+
+.light .op:hover {
+  background: #facc15;
+}
+
+.light .eq {
+  background: #34d399;
+  box-shadow: 0 6px #059669;
+}
+
+.light .eq:hover {
+  background: #10b981;
+}
+
+.light #clear {
+  background: #f87171;
+  box-shadow: 0 6px #b91c1c;
+}
+
+.light #clear:hover {
+  background: #ef4444;
+}
+
+@media screen and (max-width: 400px) {
+  .calc {
+    width: 95%;
+    padding: 16px;
+  }
+
+  .btn {
+    height: 60px;
+    font-size: 10px;
+  }
+
+  .screen {
+    font-size: 18px;
+    height: 70px;
+    padding: 16px;
+  }
+}
